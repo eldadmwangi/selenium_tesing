@@ -1,0 +1,198 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-21T22:59:06.262Z",
+    "end": "2022-03-21T22:59:44.905Z",
+    "duration": 38643,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "57d226fc-719c-4f86-9795-bdd2e0d9d296",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "218203de-b07a-4a87-9815-ad26591b588d",
+          "title": "adding a todo test",
+          "fullFile": "/home/eldad/Documents/seleniumDemo/test/firstTest.js",
+          "file": "/test/firstTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should succefully addd a todo",
+              "fullTitle": "adding a todo test should succefully addd a todo",
+              "timedOut": null,
+              "duration": 6214,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser(\"chrome\").build();\n// then naviagate to the browser\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//add a todo\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"learn selenium\", Key.RETURN);\n//assert using node\n//get the text value of the last value in the list using findElement(By.xpath(\"//li[last()]\")).getText\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\n//assert using chai\n//sating that todoTet is equal to learn selenium\ntodoText.should.equal(\"learn selenium\");\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "8230e2f9-724a-42f6-ace2-13202292df24",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8230e2f9-724a-42f6-ace2-13202292df24"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6214,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "0be35bd1-f1d5-43b4-ad78-082040a5a244",
+          "title": "add second Todo",
+          "fullFile": "/home/eldad/Documents/seleniumDemo/test/secondTest.js",
+          "file": "/test/secondTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"add second Todo\"",
+              "fullTitle": "add second Todo \"before each\" hook in \"add second Todo\"",
+              "timedOut": null,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "// ltcapabilities.capabilities.name = this.currentTest.title;\ndriver = new Builder()\n  .usingServer(gridUrl)\n  .withCapabilities(ltcapabilities.capabilities)\n  .build();",
+              "err": {},
+              "uuid": "3a0836e8-984b-4ca3-abdb-a99416641448",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"add second Todo\"",
+              "fullTitle": "add second Todo \"after each\" hook in \"add second Todo\"",
+              "timedOut": null,
+              "duration": 2317,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "06c9960e-67ef-41c4-aeec-c001e31b284f",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should add second todo",
+              "fullTitle": "add second Todo should add second todo",
+              "timedOut": null,
+              "duration": 16813,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// let driver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(todoEndPoint);\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"learn selenium\", Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\ntodoText.should.equal(\"learn selenium\");\n// await driver.quit();",
+              "err": {},
+              "uuid": "63e2df3b-4d66-4d64-9a7d-e730f05e797e",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add second todo",
+              "fullTitle": "add second Todo should add second todo",
+              "timedOut": null,
+              "duration": 17288,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// let driver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(todoEndPoint);\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"learn javascript\", Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\ntodoText.should.equal(\"learn javascript\");\n// await driver.quit();",
+              "err": {},
+              "uuid": "422e2d16-47fb-4c1c-8a82-23fdf7347d4a",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63e2df3b-4d66-4d64-9a7d-e730f05e797e",
+            "422e2d16-47fb-4c1c-8a82-23fdf7347d4a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34101,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "/home/eldad/Documents/seleniumDemo/test-report"
+      },
+      "version": "6.1.1"
+    }
+  }
+}

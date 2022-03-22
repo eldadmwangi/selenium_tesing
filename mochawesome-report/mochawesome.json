@@ -1,0 +1,141 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-14T12:54:50.777Z",
+    "end": "2022-03-14T12:54:56.117Z",
+    "duration": 5340,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "208a0721-73f0-4b17-88cf-4d9bad5b2242",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7a5ef956-6834-49a8-9cbb-7a41b63a343e",
+          "title": "add second Todo",
+          "fullFile": "/home/eldad/Documents/seleniumDemo/test/secondTest.js",
+          "file": "/test/secondTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add second todo",
+              "fullTitle": "add second Todo should add second todo",
+              "timedOut": null,
+              "duration": 4612,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"learn selenium\", Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\ntodoText.should.equal(\"learn selenium\");",
+              "err": {},
+              "uuid": "7fb7d35c-a087-4f7c-8be3-bea1ccbbf29e",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7fb7d35c-a087-4f7c-8be3-bea1ccbbf29e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4612,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "3178923f-d629-482a-ab26-8f43de48ef2d",
+          "title": "adding a todo test",
+          "fullFile": "/home/eldad/Documents/seleniumDemo/test/firstTest.js",
+          "file": "/test/firstTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should succefully addd a todo",
+              "fullTitle": "adding a todo test should succefully addd a todo",
+              "timedOut": null,
+              "duration": 4768,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser(\"chrome\").build();\n// then naviagate to the browser\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//add a todo\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"learn selenium\", Key.RETURN);\n//assert using node\n//get the text value of the last value in the list using findElement(By.xpath(\"//li[last()]\")).getText\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\n//assert using chai\n//sating that todoTet is equal to learn selenium\ntodoText.should.equal(\"learn selenium\");\n//close the browser\n// await driver.quit();",
+              "err": {},
+              "uuid": "82653e30-ba88-46bc-a0fe-2dc5e023c5ed",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82653e30-ba88-46bc-a0fe-2dc5e023c5ed"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4768,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "/home/eldad/Documents/seleniumDemo/mochawesome-report"
+      },
+      "version": "6.1.1"
+    }
+  }
+}
